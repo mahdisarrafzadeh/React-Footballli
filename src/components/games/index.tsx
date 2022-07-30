@@ -2,7 +2,7 @@ import { Avatar, CircularProgress, Grid } from '@mui/material';
 import React, { Fragment, useContext } from 'react'
 import DateContext from '../../context/appContext';
 
-import { formatFollowers } from '../../utils/date';
+import { formatDates } from '../../utils/date';
 import LeagueList from './league-list';
 
 
@@ -16,7 +16,7 @@ export default function Index({ }: Props) {
         return (
             <Fragment>
                 <Grid style={{ display: "flex", padding: "1rem", justifyContent: 'center' }} container>
-                    {formatFollowers(data).map((item: any) => {
+                    {formatDates(data).map((item: any) => {
                         return (
                             <LeagueList data={item} />
                         )

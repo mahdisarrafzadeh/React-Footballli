@@ -54,11 +54,11 @@ export const formatDate = (date: Date) => {
 }
 
 
-export const formatFollowers = (data: data[]) => {
+export const formatDates = (data: data[]) => {
     const categories: any[] = [...Array.from(new Set<SetConstructor>(data.map((item: any) => item.league.name)))]
     return categories.reduce((acc: any, category: any) => {
-        const _followers = data.filter((item: any) => item.league.name === category)
+        const _dates = data.filter((item: any) => item.league.name === category)
         const logo: any = data.find((item: any) => item.league.name === category ? item.league.logo : null)
-        return [...acc, { category: category, logos: logo.league.logo, league: _followers }]
+        return [...acc, { category: category, logos: logo.league.logo, league: _dates }]
     }, [])
 }
